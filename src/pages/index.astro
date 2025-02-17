@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import {Image} from 'astro:assets'
+import Placeholder from '../assets/C.png'
 
 const pageTitle = 'Dr. Ahmad H. Radwan, BDS';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Image src={Placeholder} width="300" height="300" alt="Png of the C language logo as a simple placeholder" />
   <h1>{pageTitle}</h1>
 </BaseLayout>
