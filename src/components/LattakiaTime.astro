@@ -1,13 +1,11 @@
 ---
-const now = new Date();
-const formatter = new Intl.DateTimeFormat('en-US', {
-  timeZone: 'Asia/Damascus', // close enough i guess
-  hour: '2-digit',
-  minute: '2-digit',
-  hour12: true,
-});
-const lattakiaTime = formatter.format(now);
 ---
 <div>
-  <h5>Syria, Lattakia<br>{lattakiaTime}</h5>
+  <h5>Syria, Lattakia<br><span class="lattakia-time">Error!</span></h5>
 </div>
+
+<script>
+  import lattakiaTime from '../scripts/lattakiaTime.js';
+  const clock = document.querySelector(".lattakia-time");
+  clock.textContent = lattakiaTime;
+</script>

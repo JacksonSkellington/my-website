@@ -1,15 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Placeholder from '../assets/Logo.svg';
+import {Image} from 'astro:assets';
 
+
+const secondaryTextColor = '#f8f0e3';
 const pageTitle = 'About';
 ---
 <BaseLayout pageTitle={pageTitle}>
+
   <section class="about">
-    <h1>This is the page where i self-report</h1>
+    <Image src={Placeholder} width="300" height="300" alt="My brand logo." />
+    <h1>Dr. Ahmad Radwan, BDS</h1>
+    <p>I'm a Dentist Based in Lattakia, Syria.<br>I'm also programmer and a chess player.<br>Thanks for stopping by my website, feel free to contact me!</p>
   </section>
-  <style>
+  
+  <style define:vars={{secondaryTextColor}}>
     .about {
       flex-grow: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about img {
+      margin-bottom: 1rem;
+    }
+
+    .about h1 {
+      font-size: 42px;
+      font-weight: 600;
+    }
+
+    .about p {
+      color: var(--secondaryTextColor);
+      font-size: 28px;
+      font-weight: 500;
     }
   </style>
 </BaseLayout>
