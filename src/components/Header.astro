@@ -1,19 +1,19 @@
 ---
 import LattakiaTime from '../components/LattakiaTime.astro';
 import {Image} from 'astro:assets';
-import Placeholder from '../assets/C.png';
+import Placeholder from '../assets/Logo.svg';
 ---
 
 <header>
   <nav>
   <div class="nav__logo">
-    <Image src={Placeholder} alt="The C language logo as a simple placeholder" height="60px" width="60px"/>
+    <a href="/"><Image src={Placeholder} alt="My own brand logo." height="50px" width="50px"/></a>
   </div>
   <div class="nav__links">
-    <a href="/" target="_blank">Home</a>
-    <a href="/blog" target="_blank">Blog</a>
-    <a href="/projects" target="_blank">Projects</a>
-    <a href="/about" target="_blank">About</a>
+    <a href="/" >Home</a>
+    <a href="/blog" >Blog</a>
+    <a href="/projects" >Projects</a>
+    <a href="/about" >About</a>
   </div>
   <div class="nav__time-display">
     <LattakiaTime />

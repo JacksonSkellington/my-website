@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'About';
+---
+<BaseLayout pageTitle={pageTitle}>
+  <section class="about">
+    <h1>This is the page where i self-report</h1>
+  </section>
+  <style>
+    .about {
+      flex-grow: 1;
+    }
+  </style>
+</BaseLayout>

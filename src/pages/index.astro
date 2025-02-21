@@ -1,12 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import {Image} from 'astro:assets'
-import Placeholder from '../assets/C.png'
+import Placeholder from '../assets/Logo.svg'
 
 const pageTitle = 'Dr. Ahmad H. Radwan, BDS';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Image src={Placeholder} width="300" height="300" alt="Png of the C language logo as a simple placeholder" />
-  <h1>{pageTitle}</h1>
+  <section class="hero">
+    <div class="hero__welcome">
+      <Image src={Placeholder} width="300" height="300" alt="My brand logo." />
+      <h1>Hello! I'm Dr. <span class="initial__A">A</span>hmad <span class="initial__R">R</span>adwan.</h1>
+    </div>
+    <div class="hero__content">
+      <h2>Dentist Based in Lattakia, Syria</h2>
+      <p>We are dedicated to meticulously addressing all your dental needs with care and precision.</p>
+      <div class="hero__actions">
+        <a class="btn" href="/Dr_Ahmad_Radwan_CV.pdf" download>Get My CV</a>
+        <a class="btn btn__secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+<style>
+
+  h1 {
+    color: var(--main-text-color);
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  h2, p {
+    text-align: center;
+  }
+  
+  .initial__A {
+    color: var(--main-color);
+  }
+  
+  .initial__R {
+    color: var(--secondary-color);
+  }
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+  .hero__welcome img {
+   margin-inline: auto; 
+  }
+
+  .hero__actions {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+  }
+ 
+</style>
 </BaseLayout>
