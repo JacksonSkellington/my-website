@@ -6,17 +6,26 @@ import Placeholder from '../assets/Logo.svg';
 
 <header>
   <nav>
-  <div class="nav__logo">
-    <a href="/my-website"><Image src={Placeholder} alt="My own brand logo." height="50px" width="50px"/></a>
-  </div>
-  <div class="nav__links">
-    <a href="/my-website" >Home</a>
-    <a href="/my-website/blog" >Blog</a>
-    <a href="/my-website/projects" >Projects</a>
-    <a href="/my-website/about" >About</a>
-  </div>
-  <div class="nav__time-display">
-    <LattakiaTime />
-  </div>
+    <div class="nav__logo">
+      <a href="/my-website"><Image src={Placeholder} alt="My own brand logo." height="50px" width="50px"/></a>
+    </div>
+    <div class="nav__links">
+      <a href="/my-website" >Home</a>
+      <a href="/my-website/blog" >Blog</a>
+      <a href="/my-website/projects" >Projects</a>
+      <a href="/my-website/about" >About</a>
+    </div>
+    <div class="nav__time-display">
+      <LattakiaTime />
+    </div>
   </nav>
+
+  <style>
+    .nav__logo {
+      transform: all 0.3 ease;
+    }
+    .nav__logo:hover {
+      transform: translateY(-2px);
+    }
+  </style>
 </header>

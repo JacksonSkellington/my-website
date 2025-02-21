@@ -1,8 +1,20 @@
 ---
+const mainColor = 'rgb(249, 160, 77)';
+const secondaryColor = 'rgb(104, 153, 171)';
 ---
 <div>
   <h5>Syria, Lattakia<br><span class="lattakia-time">Error!</span></h5>
 </div>
+
+<style define:vars={{mainColor, secondaryColor}}>
+  div h5 {
+    color: var(--secondaryColor);
+  }
+
+  .lattakia-time {
+    color: var(--mainColor);
+  }
+</style>
 
 <script>
   import lattakiaTime from '../scripts/lattakiaTime.js';

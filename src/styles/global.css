@@ -60,6 +60,7 @@ a {
 
 a:hover {
   color: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 h1 {
@@ -90,6 +91,7 @@ p {
   border-color: var(--secondary-color);
   background: var(--secondary-color);
   color: var(--bg-color);
+  transform: translateY(-2px);
 }
 
 .btn__secondary {
@@ -100,6 +102,14 @@ p {
 .btn__secondary:hover {
   border-color: var(--main-color);
   background: var(--main-color);
+}
+
+.initial__A {
+  color: var(--main-color);
+}
+
+.initial__R {
+  color: var(--secondary-color);
 }
 
 .hero__actions .btn {
