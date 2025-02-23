@@ -9,7 +9,8 @@ import Placeholder from '../assets/Logo.svg';
     <div class="nav__logo">
       <a href="/my-website"><Image src={Placeholder} alt="My own brand logo." height="50px" width="50px"/></a>
     </div>
-    <div class="nav__links">
+    <button class="nav__mobile-toggle" aria-controls="navigation-links" aria-expanded="false"></button>
+    <div id="navigation-links" data-visible="false" class="nav__links">
       <a href="/my-website" >Home</a>
       <a href="/my-website/blog" >Blog</a>
       <a href="/my-website/projects" >Projects</a>
@@ -28,4 +29,8 @@ import Placeholder from '../assets/Logo.svg';
       transform: translateY(-2px);
     }
   </style>
+
+  <script>
+    import '../scripts/mobileNavToggle.js'
+  </script>
 </header>
