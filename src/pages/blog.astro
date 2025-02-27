@@ -1,16 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const pageTitle = 'Blog';
 ---
 <BaseLayout pageTitle={pageTitle}>
   
   <section class="blog">
-    <h1>This Page is in Development!</h1>
+    <h1>Blog Posts</h1>
+    <ul>
+      {allPosts.map((post: any) => <li><a class ="blog__post-link" href={post.url}>{post.frontmatter.title}</a></li>)}
+    </ul>
   </section>
-  
+    
   <style>
+
+    h1 {
+      font-size: 2em;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .blog__post-link {
+      font-size: 1.5em;
+    }
+
     .blog {
       flex-grow: 1;
     }
+
   </style>
 </BaseLayout>
