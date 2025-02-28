@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const pageTitle = 'Blog';
 ---
@@ -8,7 +9,13 @@ const pageTitle = 'Blog';
   <section class="blog">
     <h1>Blog Posts</h1>
     <ul>
-      {allPosts.map((post: any) => <li><a class ="blog__post-link" href={post.url}>{post.frontmatter.title}</a></li>)}
+      {allPosts.map((post: any) => <BlogPost
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        url={post.url}
+        >
+        </BlogPost>
+        )}
     </ul>
   </section>
     
@@ -18,14 +25,52 @@ const pageTitle = 'Blog';
       font-size: 2em;
       font-weight: 600;
       text-align: center;
+      margin-block: 1em;
     }
-    
-    .blog__post-link {
-      font-size: 1.5em;
-    }
-
+        
     .blog {
       flex-grow: 1;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1em;
+    }
+
+    .blog__card {
+      width: 100%;
+    
+      border: transparent;
+      border-radius: 10px;
+      cursor: pointer;
+
+      background-image: linear-gradient(
+  45deg,
+  hsl(29deg 93% 64%) 1%,
+  hsl(38deg 71% 58%) 39%,
+  hsl(48deg 53% 53%) 47%,
+  hsl(62deg 38% 50%) 50%,
+  hsl(80deg 36% 53%) 51%,
+  hsl(103deg 32% 56%) 51%,
+  hsl(133deg 31% 56%) 50%,
+  hsl(154deg 35% 52%) 49%,
+  hsl(167deg 37% 50%) 49%,
+  hsl(176deg 38% 48%) 50%,
+  hsl(183deg 35% 49%) 53%,
+  hsl(190deg 33% 52%) 61%,
+  hsl(196deg 29% 54%) 99%
+);
+
+      padding-block: 1em;
+      padding-inline: 0.5em;
+      margin-inline: auto;
     }
 
   </style>

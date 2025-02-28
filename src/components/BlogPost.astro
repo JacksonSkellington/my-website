@@ -1,0 +1,67 @@
+---
+const {title, description, url} = Astro.props
+const redirect = `location.href = '${url}'`
+---
+
+<li>
+  <button onclick={redirect} class="blog__card">
+    <a href={url}>{title}</a>
+    <p>{description}</p>
+  </button>
+</li>
+
+<style>
+
+  p {
+    color: #444444;
+  }
+
+  a {
+    color: #080808;
+  }
+
+  li {
+    width: min(90dvw, 800px);
+  }
+
+  .blog__card {
+    width: 100%;
+  
+    border: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+
+  background-image: linear-gradient(
+    45deg,
+    hsl(29deg 93% 64%) 0%,
+    hsl(28deg 89% 64%) 12%,
+    hsl(28deg 84% 65%) 18%,
+    hsl(28deg 79% 65%) 22%,
+    hsl(27deg 74% 65%) 26%,
+    hsl(27deg 68% 65%) 29%,
+    hsl(26deg 63% 65%) 33%,
+    hsl(26deg 58% 65%) 36%,
+    hsl(26deg 52% 65%) 39%,
+    hsl(25deg 47% 64%) 42%,
+    hsl(25deg 42% 64%) 44%,
+    hsl(25deg 36% 64%) 47%,
+    hsl(25deg 31% 63%) 50%,
+    hsl(25deg 26% 63%) 53%,
+    hsl(25deg 21% 63%) 56%,
+    hsl(25deg 16% 62%) 58%,
+    hsl(26deg 10% 61%) 61%,
+    hsl(30deg 5% 61%) 64%,
+    hsl(98deg 1% 60%) 67%,
+    hsl(190deg 5% 59%) 71%,
+    hsl(195deg 10% 58%) 74%,
+    hsl(196deg 14% 58%) 78%,
+    hsl(196deg 19% 56%) 82%,
+    hsl(196deg 24% 55%) 88%,
+    hsl(196deg 29% 54%) 100%
+  );
+
+    padding-block: 1em;
+    padding-inline: 0.5em;
+    margin-inline: auto;
+  }
+</style>
